@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Spotlight Solos</title>
+	<meta name="description" content="Spotlight Solos">
+	<meta name="author" content="Artful Medium">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+	<!-- Import Bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- Import FontAwesome css -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Angular JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+	<!-- Google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Jacques+Francois+Shadow" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/style.css?v=1.0">
+
+	<!-- Custom Classes -->
+	<script src="build/classes/audioPlayer.js" type="text/javascript"></script>
+	<script src="build/classes/fretBoard.js" type="text/javascript"></script>
+
+</head>
+
+<!-- HTML -->
+<div id="app">
+	<div class="container">
+		<div class="row">
+			<h1 class="text-center">Spotlight Solos</h1>
+		</div><!-- .row -->
+		<div id="fret-board">
+			<div class="row controls text-center"></div>
+			<div class="patterns"></div>
+		</div>
+		<div id="audio-controls">
+			<button id="play-btn"><img src="img/play.png" alt="play button"></button>
+			<button id="pause-btn"><img src="img/pause.png" alt="pause button"></button>
+		</div>
+	</div><!-- .container -->
+	<a id="patreon" href="http://patreon.com/" target="_blank"><img src="img/become_a_patron_button.png" alt="support me on patreon"></a>
+</div><!-- #app -->
+
+<!-- END HTML -->
+
+
+<!-- Import jQuery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<!-- Import Bootstrap Javascript -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Custom Javascript -->
+<script src="build/main.js" type="text/javascript"></script>
