@@ -10,7 +10,6 @@ class FretBoard {
 		this.blocks = options.blocks;
 		this.enableBlocks();
 		this.activateBlock(this, null);	// Active 1st button and related image
-
 	}
 
 	/**
