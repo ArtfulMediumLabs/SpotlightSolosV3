@@ -5,7 +5,7 @@
  */
 
 var audioPlayer = new AudioPlayer({
-	songSrc: 'audio/Wayfarer - Amaj - 88bpm.ogg',
+	songSrc: 'audio/Wayfarer - Amaj - 88bpm.mp3',
 	containerID: '#audio-controls',
 	playBtnID: '#play-btn',
 	pauseBtnID: '#pause-btn',
