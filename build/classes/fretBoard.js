@@ -1,7 +1,7 @@
 /**
- * block.js
- * --------
- * A class to create block buttons with associated images
+ * fretBoard.js
+ * ------------
+ * A class to create a fretboard with associated buttons and images
  */
 
 class FretBoard {
