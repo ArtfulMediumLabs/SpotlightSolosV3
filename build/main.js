@@ -4,6 +4,8 @@
  * The main functions that run the application. Contains functions that will * call upon custom classes and make decisions in the application.
  */
 
+mixpanel.track("Practice Loaded");
+
 var audioPlayer = new AudioPlayer({
 	songSrc: 'audio/Wayfarer - Amaj - 88bpm.mp3',
 	containerID: '#audio-controls',
