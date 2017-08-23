@@ -40,6 +40,12 @@ h1 {
 	background: #444;
 }
 
+#song-info {
+	font-family: 'Erica One', cursive;
+	font-size: 34px;
+	margin-bottom: 30px;
+}
+
 #fret-board {
 	margin-bottom: 30px;
 }
