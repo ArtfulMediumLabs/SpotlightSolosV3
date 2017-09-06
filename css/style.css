@@ -51,10 +51,11 @@ h1 {
 }
 .song-list .song:hover {
 	background: #efefef;
+	cursor: pointer;
 }
-.song-list .song a {
-	text-decoration: none;
-	color: #000;
+.song-list .song p {
+	padding: 0;
+	margin: 0;
 }
 .song-list .song .play {
 	float: left;
