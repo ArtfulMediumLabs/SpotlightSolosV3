@@ -18,7 +18,7 @@ h1 {
 	font-size: 4em;
 	text-transform: uppercase;
 	font-style: italic;
-	margin-top: 75px;
+	margin-top: 30px;
 	margin-bottom: 30px;
 }
 
@@ -40,10 +40,42 @@ h1 {
 	background: #444;
 }
 
+/*-- Song select/preview page --*/
+.song-list {
+	list-style: none;
+	padding-left: 0;
+}
+.song-list .song {
+	border: 1px solid #ccc;
+	padding: 15px;
+}
+.song-list .song:hover {
+	background: #efefef;
+}
+.song-list .song a {
+	text-decoration: none;
+	color: #000;
+}
+.song-list .song .play {
+	float: left;
+	font-size: 20px;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.song-list .song-link {
+}
+
+/*-- Individual song page --*/
 #song-info {
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+#song-info p {
+	margin-bottom: 0;
+}
+#song-info .scale {
 	font-family: 'Erica One', cursive;
 	font-size: 24px;
-	margin-bottom: 30px;
 }
 
 #fret-board {

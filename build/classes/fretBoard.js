@@ -28,7 +28,7 @@ class FretBoard {
 		for(var i = 0; i < this.blocks.length; i++) {
 			// Add each image to the fretboard patterns
 			var scalePattern = document.createElement('img');
-			scalePattern.src = this.blocks[i].imgSrc;
+			scalePattern.src = this.blocks[i];
 			patterns.appendChild(scalePattern);
 			scalePattern.style.display = 'none';
 
@@ -54,7 +54,7 @@ class FretBoard {
 	 * image.
 	 */
 	activateBlock(fretBoard, el) {
-		console.log(fretBoard);
+		//console.log(fretBoard);
 		var index = 1;
 		if(el) {
 			index = parseInt(el.currentTarget.innerHTML.replace('block', '') );

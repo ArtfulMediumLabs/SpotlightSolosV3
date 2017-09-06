@@ -11,15 +11,9 @@ class AudioPlayer {
 		this.pauseBtnID = options.pauseBtnID;
 		this.songSrc = options.songSrc;
 		this.player = new Tone.Sampler(this.songSrc, function(){}).toMaster();
-		// this.player - new Audio();
-		// this.loadSong();
 		this.toggleLoop();
 		this.enableControls();
 	}
-
-	// loadSong() {
-	// 	this.player.src = this.songSrc;
-	// }
 
 	toggleLoop() {
 		this.player.loop = !this.player.loop;

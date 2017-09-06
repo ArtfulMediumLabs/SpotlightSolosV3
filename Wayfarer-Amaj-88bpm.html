@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Spotlight Solos</title>
+	<title>Wayfarer - A maj - 88 bpm | Spotlight Solos</title>
 	<meta name="description" content="Spotlight Solos">
 	<meta name="author" content="Artful Medium">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,12 +36,12 @@ mixpanel.init("67448e3f2fc05b03ce24dcb80bf5b74e");</script><!-- end Mixpanel -->
 		<div class="row">
 			<h1 class="text-center">Spotlight Solos</h1>
 		</div>
-		<div class="row text-center">
-				Wayfarer - A maj - 88 bpm
+		<div id="song-info" class="text-center">
+			<div class="row">
+				<p>Wayfarer - A maj - 88 bpm</p>
 			</div>
-		<div id="song-info">
-			<div class="row text-center">
-				Pentatonic
+			<div class="row">
+				<p class="scale">Pentatonic</p>
 			</div>
 		</div>
 		<div id="fret-board">
@@ -70,3 +70,16 @@ mixpanel.init("67448e3f2fc05b03ce24dcb80bf5b74e");</script><!-- end Mixpanel -->
 <script src="build/classes/fretBoard.js" type="text/javascript"></script>
 <!-- Custom Javascript -->
 <script src="build/main.js" type="text/javascript"></script>
+
+<script>
+	// Build audio player and blocks for song on this page
+	var songSrc = 'audio/Genres/Americana/Wayfarer - A Major - 88bpm/Wayfarer - Amaj - 88bpm.wav';
+	var fretboardBlocks = [
+		'img/A Major Pentatonic - Block 1.png',
+		'img/A Major Pentatonic - Block 2.png',
+		'img/A Major Pentatonic - Block 3.png',
+		'img/A Major Pentatonic - Block 4.png',
+		'img/A Major Pentatonic - Block 5.png',
+	];
+	buildSong(songSrc, fretboardBlocks);
+</script>

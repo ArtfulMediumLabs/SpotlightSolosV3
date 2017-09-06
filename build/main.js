@@ -6,30 +6,66 @@
 
 mixpanel.track("Practice Loaded");
 
-var audioPlayer = new AudioPlayer({
-	songSrc: 'audio/Wayfarer - Amaj - 88bpm.mp3',
-	containerID: '#audio-controls',
-	playBtnID: '#play-btn',
-	pauseBtnID: '#pause-btn',
-});
+/**
+ * Build a song
+ * ------------
+ * Build an audio player and fretboard blocks for a single song. Used on 
+ * single page songs.
+ */
+function buildSong(songSrc, blockArray) {
+	// Create a new audio player for this song
+	var audioPlayer = new AudioPlayer({
+		songSrc: songSrc,
+		containerID: '#audio-controls',
+		playBtnID: '#play-btn',
+		pauseBtnID: '#pause-btn',
+	});
 
-var fretBoard = new FretBoard({
-	bodyID: '#fret-board',
-	blocks: [
-		{
-			imgSrc: 'img/A Major Pentatonic - Block 1.png',
-		},
-		{
-			imgSrc: 'img/A Major Pentatonic - Block 2.png',
-		},
-		{
-			imgSrc: 'img/A Major Pentatonic - Block 3.png',
-		},
-		{
-			imgSrc: 'img/A Major Pentatonic - Block 4.png',
-		},
-		{
-			imgSrc: 'img/A Major Pentatonic - Block 5.png',
-		},
-	],
-});
+	var fretBoard = new FretBoard({
+		bodyID: '#fret-board',
+		blocks: blockArray
+	});
+}
+
+/**
+ * Song List Controls
+ * ------------------
+ * Build audio player and controls for front page song list
+ */
+function enableSonglistControls(songlistID) {
+	// Get a reference to this song list adn its' songs
+	var songList = document.querySelector(songlistID);
+	var songs = songList.children;
+
+	// Initialize an empty object to store key:value pairs for each
+	// song's title and source file. Later will be passed to a Tone.js
+	// Multiplayer sampler
+	var songSources = {};
+
+	// Wait for DOM to load and begin building multitrack audio sampler
+	window.addEventListener('DOMContentLoaded', function(e) {
+		// Loop through all songs in this playlist
+		for(var i = 0; i < songs.length; i++) {
+			// Build a key:value pair for this song and add to songSources
+			var songTitle = songs[i].children[1].innerHTML;
+			var songSrc = songs[i].children[0].getAttribute('data-src');
+			songSources[songTitle] = songSrc;
+		}
+
+		// Build a multisampler with Tone.js - pass songSources object
+		console.log(songSources);
+		var multiPlayer = new Tone.MultiPlayer(songSources, function(){}).toMaster();
+
+		// Add Event Listeners to each song's audio button
+		for(var i = 0; i < songs.length; i++) {
+			songs[i].addEventListener('click', function() {
+				// Get clicked element's song title
+				var songTitle = this.children[1].innerHTML;
+				// Stop all players
+				multiPlayer.stopAll();
+				// Play Multiplayer loop sample that matches song's title
+				multiPlayer.start(songTitle);
+			}, false);
+		}
+	}, false);
+}
