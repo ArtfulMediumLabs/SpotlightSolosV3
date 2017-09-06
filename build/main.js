@@ -68,7 +68,8 @@ function enableSonglistControls(songlistID) {
 			}, false);
 		}
 
-		// Add Event Listeners to each song's audio button
+		// Add Event Listeners to each song list item
+		// Redirects user to song's url
 		for(var i = 0; i < songs.length; i++) {
 			songs[i].addEventListener('click', function() {
 				var url = this.getAttribute('data-url');
