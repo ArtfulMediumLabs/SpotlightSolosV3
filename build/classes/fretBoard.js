@@ -80,5 +80,8 @@ class FretBoard {
 		// Get and show image related to this button
 		var img = document.querySelector(fretBoard.bodyID + ' img:nth-child(' + index + ')');
 		img.style.display = 'block';
+
+		mixpanel.track("Block Activated", 
+			{ "Block" : index });
 	}
 }
