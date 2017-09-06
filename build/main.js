@@ -53,7 +53,6 @@ function enableSonglistControls(songlistID) {
 		}
 
 		// Build a multisampler with Tone.js - pass songSources object
-		console.log(songSources);
 		var multiPlayer = new Tone.MultiPlayer(songSources, function(){}).toMaster();
 
 		// Add Event Listeners to each song's audio button
