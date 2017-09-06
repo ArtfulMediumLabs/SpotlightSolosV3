@@ -57,9 +57,9 @@ function enableSonglistControls(songlistID) {
 
 		// Add Event Listeners to each song's audio button
 		for(var i = 0; i < songs.length; i++) {
-			songs[i].addEventListener('click', function() {
+			songs[i].children[0].addEventListener('click', function() {
 				// Get clicked element's song title
-				var songTitle = this.children[1].innerHTML;
+				var songTitle = this.parentElement.children[1].innerHTML;
 				// Stop all players
 				multiPlayer.stopAll();
 				// Play Multiplayer loop sample that matches song's title
