@@ -4,7 +4,7 @@
  * The main functions that run the application. Contains functions that will * call upon custom classes and make decisions in the application.
  */
 
-mixpanel.track("Practice Loaded");
+mixpanel.track("Page Loaded");
 
 /**
  * Build a song
