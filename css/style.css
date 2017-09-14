@@ -132,6 +132,12 @@ h1 {
 	width: 100%;
 }
 
+/*-- Bootstrap Carousel --*/
+.carousel-control.left, .carousel-control.right {
+	color: #000;
+	background-image: none
+}
+
 @media screen and (max-width: 768px) {
 	h1 {
 		font-size: 3em;

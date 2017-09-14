@@ -20,7 +20,8 @@ function buildSong(songSrc, blockArray) {
 		playBtnID: '#play-btn',
 		pauseBtnID: '#pause-btn',
 	});
-
+	
+	if(blockArray) 
 	var fretBoard = new FretBoard({
 		bodyID: '#fret-board',
 		blocks: blockArray
