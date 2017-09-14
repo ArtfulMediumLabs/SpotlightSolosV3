@@ -57,11 +57,19 @@ h1 {
 	padding: 0;
 	margin: 0;
 }
-.song-list .song .play {
+.song-list .song .play,
+.song-list .song .stop {
 	float: left;
 	font-size: 20px;
 	margin-right: 15px;
 	cursor: pointer;
+}
+.song-list .song .play:hover,
+.song-list .song .stop:hover {
+	color: rgba(255, 100, 100, 1.0);	
+}
+.song-list .song .stop {
+	display: none; /* initialially hide */
 }
 .song-list .song-link {
 }

@@ -47,7 +47,7 @@ function enableSonglistControls(songlistID) {
 		// Loop through all songs in this playlist
 		for(var i = 0; i < songs.length; i++) {
 			// Build a key:value pair for this song and add to songSources
-			var songTitle = songs[i].children[1].innerHTML;
+			var songTitle = songs[i].children[2].innerHTML;
 			var songSrc = songs[i].children[0].getAttribute('data-src');
 			songSources[songTitle] = songSrc;
 		}
@@ -55,17 +55,44 @@ function enableSonglistControls(songlistID) {
 		// Build a multisampler with Tone.js - pass songSources object
 		var multiPlayer = new Tone.MultiPlayer(songSources, function(){}).toMaster();
 
-		// Add Event Listeners to each song's audio button
+		// Add Event Listeners to each song's audio buttons
 		for(var i = 0; i < songs.length; i++) {
-			songs[i].children[0].addEventListener('click', function(e) {
+			// Get song's play and stop buttons
+			var playBtn = songs[i].children[0];
+			var stopBtn = songs[i].children[1];
+
+			// Play button listener
+			playBtn.addEventListener('click', function(e) {
+				// Stop redirect to song's single page
 				e.stopImmediatePropagation();
-				// Get clicked element's song title
-				var songTitle = this.parentElement.children[1].innerHTML;
-				// Stop all players
+				// Hide all stop buttons
+				hideAllStopButtons(songs);
+				// Show all of the play buttons
+				showAllPlayButtons(songs);
+				// Get this play buttons's song title and stop button
+				var songTitle = this.parentElement.children[2].innerHTML;
+				var thisStopBtn = this.parentElement.children[1];
+				// Hide play button and show stop button for this song
+				this.style.display = 'none';
+				thisStopBtn.style.display = 'block';
+				// Stop all samples
 				multiPlayer.stopAll();
 				// Play Multiplayer loop sample that matches song's title
 				multiPlayer.start(songTitle);
 			}, false);
+
+			// Stop button listener
+			stopBtn.addEventListener('click', function(e) {
+				// Stop redirect to song's single page
+				e.stopImmediatePropagation();
+				// Get this stop button's sibling play button
+				var thisPlayBtn = this.parentElement.children[0];
+				// Hide stop button and show play button for this song
+				this.style.display = 'none';
+				thisPlayBtn.style.display = 'block';
+				// Stop all samples
+				multiPlayer.stopAll();
+			});
 		}
 
 		// Add Event Listeners to each song list item
@@ -77,4 +104,18 @@ function enableSonglistControls(songlistID) {
 			}, false);
 		}
 	}, false);
+}
+
+function hideAllStopButtons(songs) {
+	for(var i = 0; i < songs.length; i++) {
+		var stopBtn = songs[i].children[1];
+		stopBtn.style.display = 'none';
+	}
+}
+
+function showAllPlayButtons(songs) {
+	for(var i = 0; i < songs.length; i++) {
+		var playBtn = songs[i].children[0];
+		playBtn.style.display = 'block';
+	}
 }
