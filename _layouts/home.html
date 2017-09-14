@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="row">
+  <h1 class="text-center">Spotlight Solos</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <ul id="sample-song-list" class="song-list">
+      {% for song in site.songs %}
+      <li class="song" data-url="{{ song.url }}">
+        <span class="play glyphicon glyphicon-play-circle" aria-hidden="true" data-src="{{song.preview}}"></span>
+        <span class="stop glyphicon glyphicon-stop"></span>
+        <p>{{ song.title }} - {{ song.key }} - {{ song.tempo }}bpm</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

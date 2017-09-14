@@ -1,0 +1,32 @@
+</div>
+  <a id="patreon" href="https://www.patreon.com/spotlightsolos" target="_blank"><img src="/img/become_a_patron_button.png" alt="support me on patreon"></a>
+</div><!-- #app -->
+
+
+<!-- END HTML -->
+
+
+<!-- Import jQuery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<!-- Import Bootstrap Javascript -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!-- Import Tone.js -->
+<script src="/includes/Tone.min.js" type="text/javascript"></script>
+<!-- Custom Classes -->
+<script src="/build/classes/audioPlayer.js" type="text/javascript"></script>
+<script src="/build/classes/fretBoard.js" type="text/javascript"></script>
+<!-- Custom Javascript -->
+<script src="/build/main.js" type="text/javascript"></script>
+
+<script>
+  // Build audio player and blocks for song on this page
+  var songSrc = '{{page.source}}';
+  // var fretboardBlocks = [
+  //  'img/A Major Pentatonic - Block 1.png',
+  //  'img/A Major Pentatonic - Block 2.png',
+  //  'img/A Major Pentatonic - Block 3.png',
+  //  'img/A Major Pentatonic - Block 4.png',
+  //  'img/A Major Pentatonic - Block 5.png',
+  // ];
+  buildSong(songSrc/*, fretboardBlocks*/);
+</script>
