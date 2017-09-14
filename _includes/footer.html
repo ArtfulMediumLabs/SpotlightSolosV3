@@ -11,16 +11,16 @@
 <!-- Import Bootstrap Javascript -->
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <!-- Import Tone.js -->
-<script src="/includes/Tone.min.js" type="text/javascript"></script>
+<script src="{{site.baseurl}}/includes/Tone.min.js" type="text/javascript"></script>
 <!-- Custom Classes -->
-<script src="/build/classes/audioPlayer.js" type="text/javascript"></script>
-<script src="/build/classes/fretBoard.js" type="text/javascript"></script>
+<script src="{{site.baseurl}}/build/classes/audioPlayer.js" type="text/javascript"></script>
+<script src="{{site.baseurl}}/build/classes/fretBoard.js" type="text/javascript"></script>
 <!-- Custom Javascript -->
-<script src="/build/main.js" type="text/javascript"></script>
+<script src="{{site.baseurl}}/build/main.js" type="text/javascript"></script>
 
 <script>
   // Build audio player and blocks for song on this page
-  var songSrc = '{{page.source}}';
+  var songSrc = '{{site.baseurl}}{{page.source}}';
   // var fretboardBlocks = [
   //  'img/A Major Pentatonic - Block 1.png',
   //  'img/A Major Pentatonic - Block 2.png',

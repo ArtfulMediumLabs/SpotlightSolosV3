@@ -21,7 +21,7 @@
         <div class="carousel-inner">
           {% for block in page.blocks %}
             <div class="item{% if forloop.first %} active{% endif %}">
-              <img src="{{block}}" />
+              <img src="{{site.baseurl}}{{block}}" />
             </div>
           {% endfor %}
         </div>
@@ -32,8 +32,8 @@
   </div>
 </div>
 <div id="audio-controls">
-  <button id="play-btn"><img src="/img/play.png" alt="play button"></button>
-  <button id="pause-btn"><img src="/img/stop.png" alt="pause button"></button>
+  <button id="play-btn"><img src="{{site.baseurl}}/img/play.png" alt="play button"></button>
+  <button id="pause-btn"><img src="{{site.baseurl}}/img/stop.png" alt="pause button"></button>
 </div>
 
 {% include footer.html %}
